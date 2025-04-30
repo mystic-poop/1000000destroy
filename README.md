@@ -70,3 +70,5 @@ Spontaneous parallel universe travel
 Unexpected enlightenment
 ...please consult your local shaman immediately.
 
+# ⚠️ Alpha 
+this program is in alpha not running as we wanted and non-destructive
