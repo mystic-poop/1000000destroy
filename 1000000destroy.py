@@ -1,6 +1,7 @@
 import subprocess
 import os
 import time
+import random
 from turtle import *
 import turtle
 
@@ -41,17 +42,14 @@ def graphics():
 
     colors = ["red", "orange", "yellow", "lime", "cyan", "violet"]
 
-    def flash_text():
-        current_color = colors.pop(0)
-        colors.append(current_color)
-
+    def glitch_effect():
+        writer.goto(random.randint(-900, 900), random.randint(-500, 500))
+        writer.color(random.choice(colors))
         writer.clear()
-        writer.color(current_color)
         writer.write("POOPY BABY I DELETED UR SYSTEM FILES :)", align="center", font=("Comic Sans MS", 32, "bold"))
+        screen.ontimer(glitch_effect, 100)
 
-        screen.ontimer(flash_text, 500)
-
-    flash_text()
+    glitch_effect()
     screen.mainloop()
     turtle.done()
 
@@ -65,4 +63,4 @@ while True:
         print("Yeah, I knew you had no balls to run this shit.")
         break
     else:
-        print("Invalid input. YOU STUPID NI")
+        print("Invalid input. Please enter 'y' or 'n'.")
